@@ -1,0 +1,9 @@
+{
+  "id": "my-homepage",
+  "name": "我的主页",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "可自由配置的个人主页：时钟、快捷入口、待办与最近笔记。",
+  "author": "Personal",
+  "isDesktopOnly": false
+}

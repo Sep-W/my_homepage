@@ -1,0 +1,39 @@
+.mh-root { --mh-accent: #729b89; max-width: 1100px; margin: 0 auto; padding: clamp(20px, 4vw, 56px); color: var(--text-normal); }
+.mh-root *, .mh-configuration * { box-sizing: border-box; }
+.mh-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; }
+.mh-eyebrow { font-size: 10px; letter-spacing: .22em; color: var(--mh-accent); font-weight: 700; }
+.mh-header h1 { font-size: clamp(26px, 4vw, 38px); margin: 10px 0; letter-spacing: -.04em; }
+.mh-header p { margin: 0; line-height: 1.7; }
+.mh-muted { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+.mh-settings { flex-shrink: 0; }
+.mh-grid { display: grid; grid-template-columns: repeat(var(--mh-columns, 2), minmax(0, 1fr)); gap: 20px; }
+.mh-card { background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 18px; padding: 24px; min-width: 0; }
+.mh-card h2 { margin: 0 0 20px; font-size: 14px; font-weight: 600; }
+.mh-clock { font-size: clamp(42px, 6vw, 64px); line-height: 1.2; letter-spacing: -.06em; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.mh-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.mh-root .mh-link { height: auto; min-height: 48px; text-align: left; justify-content: flex-start; padding: 12px; white-space: normal; overflow-wrap: anywhere; }
+.mh-root .mh-recent { display: flex; justify-content: space-between; gap: 12px; width: 100%; height: auto; padding: 10px 0; box-shadow: none; background: transparent; border-radius: 0; border-bottom: 1px solid var(--background-modifier-border); text-align: left; }
+.mh-recent > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mh-recent > span:last-child { flex-shrink: 0; font-size: 11px; }
+.mh-root .mh-recent:hover { color: var(--mh-accent); }
+.mh-task { display: flex; gap: 8px; align-items: center; padding: 7px 0; }
+.mh-task label { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; cursor: pointer; }
+.mh-task span { overflow-wrap: anywhere; line-height: 1.6; }
+.mh-task input { accent-color: var(--mh-accent); flex-shrink: 0; }
+.mh-task .is-done span { text-decoration: line-through; color: var(--text-muted); }
+.mh-task button { background: transparent; box-shadow: none; color: var(--text-muted); }
+.mh-add-task { display: flex; gap: 8px; margin-top: 16px; }
+.mh-add-task input { min-width: 0; width: 100%; }
+.mh-add-task button { flex-shrink: 0; }
+.mh-footnote { font-size: 11px; color: var(--text-muted); margin-top: 12px; line-height: 1.6; }
+.mh-configuration { max-width: 950px; padding: 28px; margin: auto; }
+.mh-configuration textarea { width: min(340px, 100%); }
+@media (max-width: 680px) {
+  .mh-grid { grid-template-columns: 1fr; }
+  .mh-header { align-items: flex-start; }
+  .mh-card { padding: 20px; }
+  .mh-configuration .setting-item { flex-wrap: wrap; gap: 12px; }
+}
+/* Adapt to a narrow split pane as well as a narrow application window. */
+.mh-root { container-type: inline-size; }
+@container (max-width: 580px) { .mh-grid { grid-template-columns: 1fr; } }
